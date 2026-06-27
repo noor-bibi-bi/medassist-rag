@@ -129,19 +129,24 @@ def chunk_text(text, target_words=TARGET_CHUNK_WORDS, overlap_words=OVERLAP_WORD
     return chunks
 
 
+MIN_CHUNK_WORDS = 5
+
 def build_chunks_for_field(field_text, field_name):
     """
     Combines sub-header splitting with fixed-size fallback chunking.
     Returns a list of (subheader_or_empty, chunk_text) tuples.
+    Drops chunks with fewer than MIN_CHUNK_WORDS words - these are noise
+    (e.g., a chunk that's just the drug name) that crowds out genuinely
+    useful content during retrieval.
     """
     final_chunks = []
     sections = split_on_subheaders(field_text)
 
     for header, section_text in sections:
-        # Even within a sub-header section, if it's still too long, split further
         sub_chunks = chunk_text(section_text)
         for sub_chunk in sub_chunks:
-            final_chunks.append((header, sub_chunk))
+            if len(sub_chunk.split()) >= MIN_CHUNK_WORDS:
+                final_chunks.append((header, sub_chunk))
 
     return final_chunks
 def process_all_records():

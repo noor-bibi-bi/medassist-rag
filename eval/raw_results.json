@@ -1,0 +1,462 @@
+[
+  {
+    "id": "Q01",
+    "category": "answerable",
+    "question": "What are the contraindications for metformin?",
+    "expected_behavior": "answer",
+    "actual_behavior": "answer",
+    "behavior_correct": true,
+    "answer": "The contraindications for metformin are:\n\n1. Severe renal impairment (eGFR below 30 mL/min/1.73 m^2) [Source 1]\n2. Hypersensitivity to metformin [Source 1]\n3. Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma [Source 1]",
+    "num_sources": 1,
+    "sources": [
+      {
+        "drug_name": "Metformin Hydrochloride",
+        "section_type": "contraindications",
+        "distance": 0.511786937713623,
+        "text": "4 CONTRAINDICATIONS Metformin hydrochloride tablets are contraindicated in patients with: Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1) ] . Hypersensitivity to metformin. Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma. Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ). ( 4 , 5.1 ) Hypersensitivity to metformin. ( 4 ) Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma. ( 4 )"
+      }
+    ]
+  },
+  {
+    "id": "Q02",
+    "category": "answerable",
+    "question": "What are the allergy warning signs for ibuprofen?",
+    "expected_behavior": "answer",
+    "actual_behavior": "answer",
+    "behavior_correct": true,
+    "answer": "According to [Source 2], ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin.",
+    "num_sources": 3,
+    "sources": [
+      {
+        "drug_name": "Ibuprofen",
+        "section_type": "adverse_reactions",
+        "distance": 0.6988745927810669,
+        "text": "Dry eyes and mouth, gingival ulcer, rhinitis Postmarketing Experience The following adverse reactions have been identified during postapproval use of ibuprofen. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure."
+      },
+      {
+        "drug_name": "Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.7371630072593689,
+        "text": "Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin."
+      },
+      {
+        "drug_name": "Acetaminophen and Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.7371630072593689,
+        "text": "ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin."
+      }
+    ]
+  },
+  {
+    "id": "Q03",
+    "category": "answerable",
+    "question": "What is the recommended dosage for omeprazole?",
+    "expected_behavior": "answer",
+    "actual_behavior": "answer",
+    "behavior_correct": true,
+    "answer": "The recommended dosage for omeprazole varies by indication. For GERD, the recommended dosage is 20 mg once daily. For pathological hypersecretory conditions, the starting dose is 60 mg once daily, which may be adjusted based on individual patient response. For patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients, the recommended dosage is 10 mg once daily. \n\n[Source 1, 2, 3]",
+    "num_sources": 3,
+    "sources": [
+      {
+        "drug_name": "Omeprazole",
+        "section_type": "dosage_and_administration",
+        "distance": 0.40201476216316223,
+        "text": "20 mg once daily ( 2.1 )****See full prescribing information for weight based dosing in pediatric patients 1 year of age and older ( 2.2 ) Pathological Hypersecretory Conditions Starting dose is 60 mg once daily (varies with individual patient, see full prescribing information) as long as clinically indicated ( 2.1 ) * if ulcer present, continue omeprazole 20 mg once daily for an additional 18 days. ** if ulcer present, continue omeprazole 20 mg once daily for an additional 14 days. *** an additional 4 weeks of treatment may be given if no response; if recurrence additional 4 to 8 week courses may be considered. **** studied for 12 months. Reduce the dosage to 10 mg once daily for patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients ( 8.6 , 8.7 ) 2.1 Recommended Adult Dosage Regimen by Indication Table 1 shows the recommended dosage of omeprazole in adult patients by indication. Table 1: Recommended Dosage Regimen of Omeprazole in Adults by Indication Indication Dosage of Omeprazole Treatment Duration Treatment of Active Duodenal Ulcer 20 mg once daily 4 weeks1 Helicobacter pylori Eradication to Reduce the Risk of Duodenal Ulcer Recurrence Triple Therapy Omeprazole 20 mg Amoxicillin 1000 mg Clarithromycin 500 mg Take all three drugs twice daily 10 days In patients with an ulcer present at the time of initiation of therapy, continue omeprazole 20 mg once daily for an additional 18 days for ulcer healing and symptom relief. Dual Therapy Omeprazole 40 mg once daily Clarithromycin 500 mg three times daily 14 days In patients with an ulcer present at the time of initiation of therapy, an additional 14 days of omeprazole 20 mg once daily is recommended for ulcer healing and symptom relief. Active Benign Gastric Ulcer 40 mg once daily 4 to 8 weeks Treatment of Symptomatic"
+      },
+      {
+        "drug_name": "omeprazole",
+        "section_type": "dosage_and_administration",
+        "distance": 0.4022202491760254,
+        "text": "20 mg once daily ( 2.1 )**** See full prescribing information for weight based dosing in pediatric patients 2 years of age and older ( 2.2 ) Pathological Hypersecretory Conditions Starting dose is 60 mg once daily (varies with individual patient, see full prescribing information) as long as clinically indicated ( 2.1 ) * if ulcer present, continue omeprazole delayed-release capsules 20 mg once daily for an additional 18 days. ** if ulcer present, continue omeprazole delayed-release capsules 20 mg once daily for an additional 14 days. ***an additional 4 weeks of treatment may be given if no response; if recurrence additional 4 to 8 week courses may be considered. **** studied for 12 months. Reduce the dosage to 10 mg once daily for patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients ( 8.6 , 8.7 ) 2.1 Recommended Adult Dosage Regimen by Indication Table 1 shows the recommended dosage of omeprazole delayed-release capsules in adult patients by indication. Table 1: Recommended Dosage Regimen of Omeprazole Delayed-Release Capsules in Adults by Indication Indication Dosage of Omeprazole Delayed-Release Capsules Treatment Duration Treatment of Active Duodenal Ulcer 20 mg once daily 4 weeks 1 Helicobacter pylori Eradication to Reduce the Risk of Duodenal Ulcer Recurrence Triple Therapy Omeprazole delayed-release capsules 20 mg Amoxicillin 1000 mg Clarithromycin 500 mg Take all three drugs twice daily 10 days In patients with an ulcer present at the time of initiation of therapy, continue omeprazole delayed-release capsules 20 mg once daily for an additional 18 days for ulcer healing and symptom relief. Dual Therapy Omeprazole delayed-release capsules 40 mg once daily Clarithromycin 500 mg three times daily 14 days In patients with an ulcer present at the time of initiation of therapy, an additional 14 days of omeprazole delayed-release capsules 20 mg once daily is recommended for ulcer healing and symptom relief. Active Benign Gastric Ulcer 40 mg once daily 4 to 8 weeks Treatment of Symptomatic"
+      },
+      {
+        "drug_name": "Omeprazole",
+        "section_type": "dosage_and_administration",
+        "distance": 0.4022202491760254,
+        "text": "20 mg once daily (2.1) **** See full prescribing information for weight based dosing in pediatric patients 2 years of age and older (2.2) Pathological Hypersecretory Conditions Starting dose is 60 mg once daily (varies with individual patient, see full prescribing information) as long as clinically indicated (2.1) * if ulcer present, continue omeprazole delayed-release capsules 20 mg once daily for an additional 18 days. ** if ulcer present, continue omeprazole delayed-release capsules 20 mg once daily for an additional 14 days. *** an additional 4 weeks of treatment may be given if no response; if recurrence additional 4 to 8 week courses may be considered. **** studied for 12 months. Reduce the dosage to 10 mg once daily for patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients ( 8.6 , 8.7 ) 2.1 Recommended Adult Dosage Regimen by Indication Table 1 shows the recommended dosage of omeprazole delayed-release capsules in adult patients by indication. Table 1: Recommended Dosage Regimen of Omeprazole Delayed-Release Capsules in Adults by Indication Indication Dosage of Omeprazole Delayed-Release Capsules Treatment Duration Treatment of Active Duodenal Ulcer 20 mg once daily 4 weeks 1 Helicobacter pylori Eradication to Reduce the Risk of Duodenal Ulcer Recurrence Triple Therapy Omeprazole delayed-release capsules 20 mg Amoxicillin 1000 mg Clarithromycin 500 mg Take all three drugs twice daily 10 days In patients with an ulcer present at the time of initiation of therapy, continue omeprazole delayed-release capsules 20 mg once daily for an additional 18 days for ulcer healing and symptom relief. Dual Therapy Omeprazole delayed-release capsules 40 mg once daily Clarithromycin 500 mg three times daily 14 days In patients with an ulcer present at the time of initiation of therapy, an additional 14 days of omeprazole delayed-release capsules 20 mg once daily is recommended for ulcer healing and symptom relief. Active Benign Gastric Ulcer 40 mg once daily 4 to 8 weeks Treatment of Symptomatic"
+      }
+    ]
+  },
+  {
+    "id": "Q04",
+    "category": "answerable",
+    "question": "What are the cardiovascular side effects of atorvastatin?",
+    "expected_behavior": "answer",
+    "actual_behavior": "answer",
+    "behavior_correct": true,
+    "answer": "Based on the provided context, the cardiovascular side effects of atorvastatin are not explicitly listed. However, there are mentions of rare reports of:\n\n- Fatal and non-fatal hepatic failure [Source 2]\n- Rhabdomyolysis [Source 2]\n- Tendon rupture [Source 2]\n\nAdditionally, the context mentions that there have been no differences in the overall frequency of adverse reactions or serious adverse reactions between atorvastatin and simvastatin in the IDEAL study [Source 4 and Source 5].",
+    "num_sources": 5,
+    "sources": [
+      {
+        "drug_name": "Atorvastatin Calcium",
+        "section_type": "adverse_reactions",
+        "distance": 0.7468861937522888,
+        "text": "and Clinical Studies (14.6) ] . 6.2 Postmarketing Experience The following adverse reactions have been identified during post-approval use of atorvastatin. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure."
+      },
+      {
+        "drug_name": "atorvastatin calcium",
+        "section_type": "adverse_reactions",
+        "distance": 0.7500224113464355,
+        "text": "group (5.0%) than in the placebo group (4.0%). Adverse Reactions from Clinical Studies of Atorvastatin in Pediatric Patients In a 26-week controlled study in boys and postmenarchal girls with HeFH (ages 10 years to 17 years) (n=140, 31% female; 92% Caucasians, 1.6% Blacks, 1.6% Asians, 4.8% other), the safety and tolerability profile of atorvastatin 10 mg to 20 mg daily, as an adjunct to diet to reduce total cholesterol, LDL-C, and apo B levels, was generally similar to that of placebo [see Use in Special Populations ( 8.4 ) and Clinical Studies ( 14.6 )]. 6.2 Postmarketing Experience The following adverse reactions have been identified during post-approval use of atorvastatin. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure. Adverse reactions associated with atorvastatin therapy reported since market introduction, that are not listed above, regardless of causality assessment, include the following: anaphylaxis, angioneurotic edema, bullous rashes (including erythema multiforme, Stevens-Johnson syndrome, and toxic epidermal necrolysis), rhabdomyolysis, myositis, fatigue, tendon rupture, fatal and non-fatal hepatic failure, dizziness, depression, peripheral neuropathy, and pancreatitis and interstitial lung disease. There have been rare reports of immune-mediated necrotizing myopathy associated with statin use [see Warnings and Precautions ( 5.2 )] . There have been rare postmarketing reports of cognitive impairment (e.g., memory loss, forgetfulness, amnesia, memory impairment, confusion) associated with statin use. These cognitive issues have been reported for all statins. The reports are generally nonserious, and reversible upon statin discontinuation, with variable times to symptom onset (one day to years) and symptom resolution (median of 3 weeks)."
+      },
+      {
+        "drug_name": "Atorvastatin Calcium",
+        "section_type": "adverse_reactions",
+        "distance": 0.7583771347999573,
+        "text": "in Specific Populations ( 8.4 ) and Clinical Studies ( 14.6 )] . 6.2 Postmarketing Experience The following adverse reactions have been identified during post-approval use of atorvastatin. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure."
+      },
+      {
+        "drug_name": "atorvastatin calcium",
+        "section_type": "adverse_reactions",
+        "distance": 0.7630705833435059,
+        "text": "[see Clinical Studies ( 14.1 )] involving 8,888 subjects (age range 26 to 80 years, 19% women; 99.3% Caucasians, 0.4% Asians, 0.3% Blacks, 0.04% other) treated with atorvastatin 80 mg/day (n=4,439) or simvastatin 20 mg to 40 mg daily (n=4,449), there was no difference in the overall frequency of adverse reactions or serious adverse reactions between the treatment groups during a median follow-up of 4.8 years. Stroke Prevention by Aggressive Reduction in Cholesterol Levels ("
+      },
+      {
+        "drug_name": "ATORVASTATIN CALCIUM",
+        "section_type": "adverse_reactions",
+        "distance": 0.7880852222442627,
+        "text": "[see Clinical Studies (14.1) ] involving 8,888 subjects (age range 26 to 80 years, 19% women; 99.3% Caucasians, 0.4% Asians, 0.3% Blacks, 0.04% other) treated with atorvastatin calcium 80 mg/day (n=4439) or simvastatin 20 to 40 mg daily (n=4449), there was no difference in the overall frequency of adverse reactions or serious adverse reactions between the treatment groups during a median follow-up of 4.8 years. Stroke Prevention by Aggressive Reduction in Cholesterol Levels ("
+      }
+    ]
+  },
+  {
+    "id": "Q05",
+    "category": "answerable",
+    "question": "What are the warnings for taking lisinopril?",
+    "expected_behavior": "answer",
+    "actual_behavior": "answer",
+    "behavior_correct": true,
+    "answer": "Based on the provided context, the warnings for taking lisinopril include:\n\n- Hypotension (9.7% in the GISSI trial [Source 1])\n- Renal dysfunction (2.0% in the GISSI trial [Source 1], 10% in the High Dose group and 7% in the Low Dose group of the ATLAS trial [Source 2])\n- Angioedema (0.01% in the GISSI trial [Source 1])\n- Skin rash and generalized edema (0.01% in the GISSI trial [Source 1])\n- Post infarction angina (0.3% in the GISSI trial [Source 1])\n- Cough (0.5% in the GISSI trial [Source 1])\n- Discontinuation due to renal dysfunction was 4.2% in elderly patients treated with lisinopril in the GISSI trial [Source 1]\n- Higher incidence of hypotension (by 5.3%) and renal dysfunction (by 1.3%) compared with patients not taking Lisinopril in the ATLAS trial [Source 2]\n- Dizziness (12% in the Low Dose group and 19% in the High Dose group of the ATLAS trial [Source 2])\n- Syncope (5% in the Low Dose group and 7% in the High Dose group of the ATLAS trial [Source 2])\n- Hyperkalemia (4% in the Low Dose group and 6% in the High Dose group of the ATLAS trial [Source 2])\n- Creatinine increased (7% in the Low Dose group and 10% in the High Dose group of the ATLAS trial [Source 2])\n- Acute Myocardial Infarction (patients treated with Lisinopril had a higher incidence compared with patients not taking Lisinopril in the ATLAS trial [Source 2])",
+    "num_sources": 2,
+    "sources": [
+      {
+        "drug_name": "lisinopril",
+        "section_type": "adverse_reactions",
+        "distance": 0.545126736164093,
+        "text": "-3 trial, hypotension (9.7%), renal dysfunction (2.0%), cough (0.5%), post infarction angina (0.3%), skin rash and generalized edema (0.01%), and angioedema (0.01%) resulted in withdrawal of treatment. In elderly patients treated with lisinopril, discontinuation due to renal dysfunction was 4.2%. Other clinical adverse experiences occurring in 0.3% to 1.0% of patients with hypertension or heart failure treated with lisinopril in controlled clinical trials and rarer, serious, possibly drug-related events reported in uncontrolled studies or marketing experience are listed below, and within each category are in order of decreasing severity:"
+      },
+      {
+        "drug_name": "LISINOPRIL",
+        "section_type": "adverse_reactions",
+        "distance": 0.577222466468811,
+        "text": "trial High Dose (n=1568) Low Dose (n=1596) Dizziness 19% 12% Hypotension 11% 7% Creatinine increased 10% 7% Hyperkalemia 6% 4% Syncope 7% 5% Acute Myocardial Infarction Patients treated with Lisinopril had a higher incidence of hypotension (by 5.3%) and renal dysfunction (by 1.3%) compared with patients not taking Lisinopril. Other clinical adverse reactions occurring in 1 % or higher of patients with hypertension or heart failure treated with Lisinopril in controlled clinical trials and do not appear in other sections of labeling are listed below:"
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "category": "irrelevant",
+    "question": "What is the capital of France?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q07",
+    "category": "irrelevant",
+    "question": "How do I bake a chocolate cake?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q08",
+    "category": "irrelevant",
+    "question": "What's the score of last night's football game?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q09",
+    "category": "irrelevant",
+    "question": "Who wrote Romeo and Juliet?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q10",
+    "category": "irrelevant",
+    "question": "What's the weather like today?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q11",
+    "category": "plausible_unanswerable",
+    "question": "Will ibuprofen interact with my cat's medication?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 2,
+    "sources": [
+      {
+        "drug_name": "Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.8389179706573486,
+        "text": "). Avoid the use of ibuprofen tablets in patients with severe heart failure unless the benefits are expected to outweigh the risk of worsening heart failure. If ibuprofen tablets is used in patients with severe heart failure, monitor patients for signs of worsening heart failure. Gastrointestinal Effects - Risk of Ulceration, Bleeding, and Perforation NSAIDs, including ibuprofen tablets, can cause serious gastrointestinal (GI) adverse events including inflammation, bleeding, ulceration, and perforation of the stomach, small intestine, or large intestine, which can be fatal. These serious adverse events can occur at any time, with or without warning symptoms, in patients treated with NSAIDs. Only one in five patients, who develop a serious upper GI adverse event on"
+      },
+      {
+        "drug_name": "Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.8480109572410583,
+        "text": "use increased the risk of MI, hospitalization for heart failure, and death. Additionally, fluid retention and edema have been observed in some patients treated with NSAIDs. Use of ibuprofen may blunt the CV effects of several therapeutic agents used to treat these medical conditions [e.g., diuretics, ACE inhibitors, or angiotensin receptor blockers (ARBs)] [see Drug Interactions ]. Avoid the use of ibuprofen tablets in patients with severe heart failure unless the benefits are expected to outweigh the risk of worsening heart failure. If ibuprofen tablets are used in patients with severe heart failure, monitor patients for signs of worsening heart failure. Gastrointestinal Effects - Risk of Ulceration, Bleeding, and Perforation NSAIDs, including ibuprofen tablets, can cause serious gastrointestinal (GI) adverse events including inflammation, bleeding, ulceration, and perforation of the stomach, small intestine, or large intestine, which can be fatal. These serious adverse events can occur at any time, with or without warning symptoms, in patients treated with NSAIDs. Only one in five patients, who develop a serious upper GI adverse event on"
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "category": "plausible_unanswerable",
+    "question": "Can I give metformin to my dog?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q13",
+    "category": "plausible_unanswerable",
+    "question": "Is amoxicillin safe to take with alcohol mixed with energy drinks?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q14",
+    "category": "plausible_unanswerable",
+    "question": "Does albuterol affect athletic drug testing results?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 2,
+    "sources": [
+      {
+        "drug_name": "Albuterol Sulfate",
+        "section_type": "adverse_reactions",
+        "distance": 0.7068984508514404,
+        "text": "Clinical Trial Experience The results of clinical trials with albuterol inhalation solution in 135 patients showed the following side effects which were considered probably or possibly drug related:"
+      },
+      {
+        "drug_name": "Albuterol Sulfate",
+        "section_type": "adverse_reactions",
+        "distance": 0.7299777269363403,
+        "text": "The results of clinical trials with albuterol inhalation solution in 135 patients showed the following side effects which were considered probably or possibly drug related:"
+      }
+    ]
+  },
+  {
+    "id": "Q15",
+    "category": "plausible_unanswerable",
+    "question": "Can I crush atorvastatin tablets and put them in food?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q16",
+    "category": "out_of_scope_drug",
+    "question": "What are the side effects of insulin?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q17",
+    "category": "out_of_scope_drug",
+    "question": "What is the dosage for warfarin?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 3,
+    "sources": [
+      {
+        "drug_name": "METFORMIN HYDROCHLORIDE",
+        "section_type": "dosage_and_administration",
+        "distance": 0.6913889646530151,
+        "text": "Recommended Dosage in Adults and Pediatric Patients Aged 10"
+      },
+      {
+        "drug_name": "METOPROLOL TARTRATE",
+        "section_type": "dosage_and_administration",
+        "distance": 0.7169486284255981,
+        "text": "Recommended starting dosage is 100 mg daily, in single or divided doses. ( 2.1 )"
+      },
+      {
+        "drug_name": "Metoprolol Tartrate",
+        "section_type": "dosage_and_administration",
+        "distance": 0.7169486284255981,
+        "text": "Recommended starting dosage is 100 mg daily, in single or divided doses. (2.1)"
+      }
+    ]
+  },
+  {
+    "id": "Q18",
+    "category": "out_of_scope_drug",
+    "question": "Are there contraindications for taking aspirin with blood thinners?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 5,
+    "sources": [
+      {
+        "drug_name": "Childrens Ibuprofen Oral Suspension Dye Free",
+        "section_type": "warnings",
+        "distance": 0.7505953907966614,
+        "text": "has had stomach ulcers or bleeding problems takes a blood thinning (anticoagulant) or steroid drug takes other drug containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) takes more or for a longer time than directed"
+      },
+      {
+        "drug_name": "Concentrated ibuprofen infants",
+        "section_type": "warnings",
+        "distance": 0.7585417628288269,
+        "text": "has had stomach ulcers or bleeding problems takes a blood thinning (anticoagulant) or steroid drug takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) takes more or for a longer time than directed"
+      },
+      {
+        "drug_name": "leader Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.7688077688217163,
+        "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"
+      },
+      {
+        "drug_name": "Topcare Infants Ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.7688077688217163,
+        "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"
+      },
+      {
+        "drug_name": "childrens ibuprofen",
+        "section_type": "warnings",
+        "distance": 0.7688077688217163,
+        "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"
+      }
+    ]
+  },
+  {
+    "id": "Q19",
+    "category": "out_of_scope_drug",
+    "question": "What are the warnings for prednisone?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q20",
+    "category": "out_of_scope_drug",
+    "question": "What is the recommended dosage of acetaminophen for children?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 2,
+    "sources": [
+      {
+        "drug_name": "METFORMIN HYDROCHLORIDE",
+        "section_type": "dosage_and_administration",
+        "distance": 0.5014053583145142,
+        "text": "Recommended Dosage in Adults and Pediatric Patients Aged 10"
+      },
+      {
+        "drug_name": "ALBUTEROL SULFATE",
+        "section_type": "dosage_and_administration",
+        "distance": 0.5569742321968079,
+        "text": "The usual starting dosage for children over 6 years to 14 years of age is 2 mg (1 teaspoonful) three or four times a day. Children 2 to 5"
+      }
+    ]
+  },
+  {
+    "id": "Q21",
+    "category": "vague",
+    "question": "Is this medicine safe?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 1,
+    "sources": [
+      {
+        "drug_name": "IBUPROFEN AND FAMOTIDINE",
+        "section_type": "adverse_reactions",
+        "distance": 0.8468136191368103,
+        "text": ") [see Warnings and Precautions (5.12)] Fetal Toxicity [see Warnings and Precautions (5.13)] Hematologic Toxicity [see Warnings and Precautions (5.14)] Aseptic Meningitis [see Warnings and Precautions (5.18)] Ophthalmological Effects [see Warnings and Precautions (5.19)] Most common adverse reactions (\u22651% and greater than ibuprofen alone) are nausea, diarrhea, constipation, upper abdominal pain, and headache. (6.1) To report , contact Ascent Pharmaceuticals, Inc., at 1-855-221-1622 or FDA at 1-800-FDA-1088 or www.fda.gov/medwatch 6.1 Clinical Trials Experience Because clinical trials are conducted under widely varying conditions, adverse reaction rates observed in the clinical trials of a drug cannot be directly compared to rates in the clinical trials of another drug and may not reflect the rates observed in practice. The safety of ibuprofen and famotidine tablet was evaluated in 1022 patients in controlled clinical studies, including 508 patients treated for at least 6 months and 107 patients treated for approximately 1 year. Patients treated with ibuprofen and famotidine tablet ranged in age from 39 to 80 years (median age 55 years), with 67% female, 79% Caucasian, 18% African-American, and 3% other races. Two randomized, active-controlled clinical studies (Study 301 and Study 303) were conducted for the reduction of the risk of development of ibuprofen-associated, upper gastrointestinal ulcers in patients who required use of ibuprofen, which included 1022 patients on ibuprofen and famotidine tablet and 511 patients on ibuprofen alone. Approximately 15% of patients were on low-dose aspirin. Patients were assigned randomly, in a 2:1 ratio, to treatment with either ibuprofen and famotidine tablet or ibuprofen 800 mg three times a day for 24 consecutive weeks. Three serious cases of acute renal failure were observed in patients treated with ibuprofen and famotidine tablet in the two controlled clinical trials. All three patients recovered to baseline levels after discontinuation of ibuprofen and famotidine tablet. Additionally, increases in serum creatinine were observed in both treatment arms in the two clinical studies. Many of these patients were taking concomitant diuretics and/or angiotensin-converting enzyme inhibitors, or angiotensin receptor blockers. There were patients with a normal baseline serum creatinine level who developed abnormal values in the controlled trials as presented"
+      }
+    ]
+  },
+  {
+    "id": "Q22",
+    "category": "vague",
+    "question": "What should I avoid while taking my medication?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q23",
+    "category": "vague",
+    "question": "Will this make me drowsy?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q24",
+    "category": "vague",
+    "question": "Can I take this with food?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  },
+  {
+    "id": "Q25",
+    "category": "vague",
+    "question": "Is it okay to double the dose if I miss one?",
+    "expected_behavior": "abstain",
+    "actual_behavior": "abstain",
+    "behavior_correct": true,
+    "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
+    "num_sources": 0,
+    "sources": []
+  }
+]

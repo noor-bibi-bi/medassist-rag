@@ -1,0 +1,31 @@
+[
+  {"id": "Q01", "category": "answerable", "question": "What are the contraindications for metformin?", "expected_behavior": "answer"},
+  {"id": "Q02", "category": "answerable", "question": "What are the allergy warning signs for ibuprofen?", "expected_behavior": "answer"},
+  {"id": "Q03", "category": "answerable", "question": "What is the recommended dosage for omeprazole?", "expected_behavior": "answer"},
+  {"id": "Q04", "category": "answerable", "question": "What are the cardiovascular side effects of atorvastatin?", "expected_behavior": "answer"},
+  {"id": "Q05", "category": "answerable", "question": "What are the warnings for taking lisinopril?", "expected_behavior": "answer"},
+
+  {"id": "Q06", "category": "irrelevant", "question": "What is the capital of France?", "expected_behavior": "abstain"},
+  {"id": "Q07", "category": "irrelevant", "question": "How do I bake a chocolate cake?", "expected_behavior": "abstain"},
+  {"id": "Q08", "category": "irrelevant", "question": "What's the score of last night's football game?", "expected_behavior": "abstain"},
+  {"id": "Q09", "category": "irrelevant", "question": "Who wrote Romeo and Juliet?", "expected_behavior": "abstain"},
+  {"id": "Q10", "category": "irrelevant", "question": "What's the weather like today?", "expected_behavior": "abstain"},
+
+  {"id": "Q11", "category": "plausible_unanswerable", "question": "Will ibuprofen interact with my cat's medication?", "expected_behavior": "abstain"},
+  {"id": "Q12", "category": "plausible_unanswerable", "question": "Can I give metformin to my dog?", "expected_behavior": "abstain"},
+  {"id": "Q13", "category": "plausible_unanswerable", "question": "Is amoxicillin safe to take with alcohol mixed with energy drinks?", "expected_behavior": "abstain"},
+  {"id": "Q14", "category": "plausible_unanswerable", "question": "Does albuterol affect athletic drug testing results?", "expected_behavior": "abstain"},
+  {"id": "Q15", "category": "plausible_unanswerable", "question": "Can I crush atorvastatin tablets and put them in food?", "expected_behavior": "abstain"},
+
+  {"id": "Q16", "category": "out_of_scope_drug", "question": "What are the side effects of insulin?", "expected_behavior": "abstain"},
+  {"id": "Q17", "category": "out_of_scope_drug", "question": "What is the dosage for warfarin?", "expected_behavior": "abstain"},
+  {"id": "Q18", "category": "out_of_scope_drug", "question": "Are there contraindications for taking aspirin with blood thinners?", "expected_behavior": "abstain"},
+  {"id": "Q19", "category": "out_of_scope_drug", "question": "What are the warnings for prednisone?", "expected_behavior": "abstain"},
+  {"id": "Q20", "category": "out_of_scope_drug", "question": "What is the recommended dosage of acetaminophen for children?", "expected_behavior": "abstain"},
+
+  {"id": "Q21", "category": "vague", "question": "Is this medicine safe?", "expected_behavior": "abstain"},
+  {"id": "Q22", "category": "vague", "question": "What should I avoid while taking my medication?", "expected_behavior": "abstain"},
+  {"id": "Q23", "category": "vague", "question": "Will this make me drowsy?", "expected_behavior": "abstain"},
+  {"id": "Q24", "category": "vague", "question": "Can I take this with food?", "expected_behavior": "abstain"},
+  {"id": "Q25", "category": "vague", "question": "Is it okay to double the dose if I miss one?", "expected_behavior": "abstain"}
+]

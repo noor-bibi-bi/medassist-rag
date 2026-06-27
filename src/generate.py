@@ -17,7 +17,7 @@ MODEL_NAME = "llama-3.1-8b-instant"
 CHROMA_DB_PATH = "data/processed/chroma_db"
 COLLECTION_NAME = "medassist_chunks"
 TOP_K = 5
-MAX_DISTANCE_THRESHOLD = 1.0  # chunks worse than this are considered irrelevant
+MAX_DISTANCE_THRESHOLD = 0.85  # chunks worse than this are considered irrelevant
 
 SYSTEM_PROMPT = """You are a medical information assistant. You must follow these rules strictly:
 
@@ -25,7 +25,8 @@ SYSTEM_PROMPT = """You are a medical information assistant. You must follow thes
 2. For every claim you make, cite the source using [Source N] notation, where N matches the source number in the context.
 3. If the context does not contain enough information to answer the question, respond with exactly this sentence and nothing else: "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional."
 4. Do not give medical advice beyond what is explicitly stated in the context. Do not add general health tips, interpretations, or extrapolations.
-5. Keep your answer concise and directly focused on the question asked."""
+5. Keep your answer concise and directly focused on the question asked.
+6. If the question does not name a specific drug or condition, and the context only matches by loose keyword similarity rather than directly addressing the question, you MUST use the exact refusal sentence from rule 3. Do not assume the question is about whichever drug happens to appear in the context. Partial relevance is not enough - if the context does not directly and specifically answer what was asked, refuse rather than hedge or guess."""
 
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
