@@ -101,7 +101,11 @@ function ChatMessage({ message, onEdit }) {
       <div className="flex justify-start">
         <div className="max-w-xl w-full">
           {message.loading && (
-            <p className="font-mono text-xs text-warmgray">Searching label data…</p>
+            <div className="bg-white border border-parchment rounded-md px-4 py-3 inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-pharmacy animate-bounce [animation-delay:-0.3s]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-pharmacy animate-bounce [animation-delay:-0.15s]"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-pharmacy animate-bounce"></span>
+            </div>
           )}
 
           {message.error && (
@@ -118,7 +122,7 @@ function ChatMessage({ message, onEdit }) {
               </div>
             ) : (
               <div className="bg-white border border-parchment rounded-md p-4">
-                <div className="font-body text-ink leading-relaxed prose prose-sm max-w-none prose-p:my-2 prose-ul:my-2 prose-li:my-0.5">
+                <div className="font-body leading-relaxed prose prose-sm max-w-none prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 prose-headings:text-ink prose-p:text-ink prose-li:text-ink prose-strong:text-ink">
                   <ReactMarkdown>{flattenListIndentation(message.answer)}</ReactMarkdown>
                 </div>
                 {message.sources.length > 0 && (
@@ -142,10 +146,88 @@ function ChatMessage({ message, onEdit }) {
   )
 }
 
+function Sidebar({ conversations, activeConversationId, onSelect, onNewChat }) {
+  return (
+    <div className="w-64 bg-parchment/40 border-r border-parchment flex flex-col h-screen">
+      <div className="p-4">
+        <p className="font-display text-xl font-bold text-pharmacy">MedAssist</p>
+        <button
+          onClick={onNewChat}
+          className="mt-4 w-full font-body text-sm text-pharmacy border border-pharmacy rounded-md py-2 hover:bg-pharmacy hover:text-paper transition-colors"
+        >
+          + New chat
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto px-2">
+        <p className="font-mono text-xs text-warmgray uppercase tracking-wider px-2 mb-1">
+          Recent
+        </p>
+        {conversations.filter((c) => c.messages.length > 0).slice().reverse().map((conv) => (
+          <button
+            key={conv.id}
+            onClick={() => onSelect(conv.id)}
+            className={`w-full text-left font-body text-sm px-3 py-2 rounded-md mb-1 truncate transition-colors ${
+              conv.id === activeConversationId
+                ? 'bg-pharmacy text-paper'
+                : 'text-ink hover:bg-parchment'
+            }`}
+          >
+            {conv.title || 'New conversation'}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [input, setInput] = useState('')
-  const [messages, setMessages] = useState([])
   const [editingId, setEditingId] = useState(null)
+  const [conversations, setConversations] = useState(() => [
+    { id: crypto.randomUUID(), title: null, messages: [] },
+  ])
+  const [activeConversationId, setActiveConversationId] = useState(null)
+
+  useEffect(() => {
+    if (activeConversationId === null && conversations.length > 0) {
+      setActiveConversationId(conversations[0].id)
+    }
+  }, [])
+
+  const activeConversation = conversations.find((c) => c.id === activeConversationId)
+  const messages = activeConversation ? activeConversation.messages : []
+
+  const updateActiveMessages = (updater) => {
+    setConversations((prev) =>
+      prev.map((c) =>
+        c.id === activeConversationId
+          ? { ...c, messages: updater(c.messages) }
+          : c
+      )
+    )
+  }
+
+  const setConversationTitle = (title) => {
+    setConversations((prev) =>
+      prev.map((c) =>
+        c.id === activeConversationId && c.title === null
+          ? { ...c, title }
+          : c
+      )
+    )
+  }
+
+  const startNewConversation = () => {
+    const newId = crypto.randomUUID()
+    setConversations((prev) => [
+      ...prev.filter((c) => c.messages.length > 0),
+      { id: newId, title: null, messages: [] },
+    ])
+    setActiveConversationId(newId)
+    setInput('')
+    setEditingId(null)
+  }
 
   const bottomRef = useRef(null)
 
@@ -172,12 +254,10 @@ function App() {
     if (!trimmed) return
 
     if (editingId !== null) {
-      // Editing an existing message: truncate everything from that point
-      // forward, then re-ask with the edited text.
       const editIndex = messages.findIndex((m) => m.id === editingId)
       const messageId = editingId
 
-      setMessages((prev) => [
+      updateActiveMessages((prev) => [
         ...prev.slice(0, editIndex),
         { id: messageId, question: trimmed, answer: null, sources: [], loading: true, error: null },
       ])
@@ -186,7 +266,7 @@ function App() {
 
       try {
         const data = await askBackend(trimmed)
-        setMessages((prev) =>
+        updateActiveMessages((prev) =>
           prev.map((m) =>
             m.id === messageId
               ? { ...m, answer: data.answer, sources: data.sources, loading: false }
@@ -194,7 +274,7 @@ function App() {
           )
         )
       } catch (err) {
-        setMessages((prev) =>
+        updateActiveMessages((prev) =>
           prev.map((m) =>
             m.id === messageId ? { ...m, loading: false, error: err.message } : m
           )
@@ -203,9 +283,11 @@ function App() {
       return
     }
 
-    // Sending a brand-new message
     const messageId = crypto.randomUUID()
-    setMessages((prev) => [
+    if (messages.length === 0) {
+      setConversationTitle(trimmed.slice(0, 50))
+    }
+    updateActiveMessages((prev) => [
       ...prev,
       { id: messageId, question: trimmed, answer: null, sources: [], loading: true, error: null },
     ])
@@ -213,7 +295,7 @@ function App() {
 
     try {
       const data = await askBackend(trimmed)
-      setMessages((prev) =>
+      updateActiveMessages((prev) =>
         prev.map((m) =>
           m.id === messageId
             ? { ...m, answer: data.answer, sources: data.sources, loading: false }
@@ -221,7 +303,7 @@ function App() {
         )
       )
     } catch (err) {
-      setMessages((prev) =>
+      updateActiveMessages((prev) =>
         prev.map((m) =>
           m.id === messageId ? { ...m, loading: false, error: err.message } : m
         )
@@ -240,100 +322,108 @@ function App() {
   }
 
   return (
-    <div className="bg-paper min-h-screen flex flex-col">
-      {/* Scrollable message area */}
-      <div className="flex-1 overflow-y-auto px-6 py-8">
-        <div className="max-w-2xl mx-auto">
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar
+        conversations={conversations}
+        activeConversationId={activeConversationId}
+        onSelect={setActiveConversationId}
+        onNewChat={startNewConversation}
+      />
 
-          {messages.length === 0 && (
-            <header className="mb-10">
-              <p className="font-mono text-xs text-warmgray uppercase tracking-wider">
-                clinical reference tool — demo
-              </p>
-              <h1 className="font-display text-5xl font-bold text-pharmacy mt-1">
-                MedAssist
-              </h1>
-              <p className="font-body text-warmgray mt-3 max-w-lg">
-                Ask a question about an FDA-labeled drug. Answers are grounded in
-                real label data and cite their source — or decline when the
-                source data doesn't support a confident answer.
-              </p>
-              <p className="font-mono text-xs text-amber mt-3 max-w-lg">
-                Educational demo only — not medical advice. Built on public FDA label
-                data, not a substitute for consulting a healthcare professional.
-              </p>
+      <div className="flex-1 flex flex-col bg-paper h-screen overflow-hidden">
+        {/* Scrollable message area */}
+        <div className="flex-1 overflow-y-auto px-6 py-8">
+          <div className="max-w-2xl mx-auto">
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {EXAMPLE_QUESTIONS.map((q) => (
-                  <button
-                    key={q}
-                    onClick={() => {
-                      setInput(q)
-                      // auto-send on next tick, after input state updates
-                      setTimeout(() => {
-                        document.getElementById('chat-input-form').requestSubmit()
-                      }, 0)
-                    }}
-                    className="font-mono text-xs text-warmgray border border-parchment bg-white rounded-full px-3 py-1.5 hover:border-pharmacy hover:text-pharmacy transition-colors"
-                  >
-                    {q}
-                  </button>
-                ))}
-              </div>
-            </header>
-          )}
+            {messages.length === 0 && (
+              <header className="mb-10 mt-[8vh] flex flex-col items-center text-center">
+                <p className="font-mono text-xs text-warmgray uppercase tracking-wider">
+                  clinical reference tool — demo
+                </p>
+                <h1 className="font-display text-6xl font-bold text-pharmacy mt-2">
+                  MedAssist
+                </h1>
+                <p className="font-body text-warmgray text-lg mt-4 max-w-md">
+                  Ask a question about an FDA-labeled drug. Answers are grounded in
+                  real label data and cite their source — or decline when the
+                  source data doesn't support a confident answer.
+                </p>
+                <p className="font-mono text-xs text-amber mt-4 max-w-md border border-amber/30 bg-amber/5 rounded-md px-3 py-2">
+                  Educational demo only — not medical advice. Built on public FDA label
+                  data, not a substitute for consulting a healthcare professional.
+                </p>
 
-          {messages.map((message) => (
-            <ChatMessage key={message.id} message={message} onEdit={startEditing} />
-          ))}
-          <div ref={bottomRef} />
+                <div className="mt-8 flex flex-wrap gap-2 justify-center">
+                  {EXAMPLE_QUESTIONS.map((q) => (
+                    <button
+                      key={q}
+                      onClick={() => {
+                        setInput(q)
+                        setTimeout(() => {
+                          document.getElementById('chat-input-form').requestSubmit()
+                        }, 0)
+                      }}
+                      className="font-mono text-xs text-warmgray border border-parchment bg-white rounded-full px-3 py-1.5 hover:border-pharmacy hover:text-pharmacy transition-colors"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              </header>
+            )}
 
+            {messages.map((message) => (
+              <ChatMessage key={message.id} message={message} onEdit={startEditing} />
+            ))}
+            <div ref={bottomRef} />
+
+          </div>
         </div>
-      </div>
 
-      {/* Fixed input bar at the bottom */}
-      <div className="border-t border-parchment bg-paper px-6 py-4">
-        <div className="max-w-2xl mx-auto">
-          {editingId !== null && (
-            <div className="flex items-center justify-between mb-2">
-              <p className="font-mono text-xs text-pharmacy">Editing message — this will regenerate the answer</p>
-              <button onClick={cancelEditing} className="font-mono text-xs text-warmgray hover:text-amber">
-                cancel
-              </button>
-            </div>
-          )}
-          <form
-            id="chat-input-form"
-            onSubmit={(e) => {
-              e.preventDefault()
-              handleSend()
-            }}
-            className="relative flex items-end"
-          >
-            <textarea
-              className="w-full font-body text-ink bg-white border border-parchment rounded-md p-3 pr-12 resize-none focus:outline-none focus:ring-2 focus:ring-pharmacy"
-              rows={1}
-              placeholder="Ask about an FDA-labeled drug…"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault()
-                  handleSend()
-                }
+        {/* Fixed input bar at the bottom */}
+        <div className="border-t border-parchment bg-paper px-6 py-4 shrink-0">
+          <div className="max-w-2xl mx-auto">
+            {editingId !== null && (
+              <div className="flex items-center justify-between mb-2">
+                <p className="font-mono text-xs text-pharmacy">Editing message — this will regenerate the answer</p>
+                <button onClick={cancelEditing} className="font-mono text-xs text-warmgray hover:text-amber">
+                  cancel
+                </button>
+              </div>
+            )}
+            <form
+              id="chat-input-form"
+              onSubmit={(e) => {
+                e.preventDefault()
+                handleSend()
               }}
-            />
-            <button
-              type="submit"
-              disabled={!input.trim()}
-              className="absolute right-2 bottom-2 bg-pharmacy text-paper rounded-full w-8 h-8 flex items-center justify-center disabled:opacity-30 hover:opacity-90 transition-opacity"
-              aria-label="Send"
+              className="relative flex items-end"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </form>
+              <textarea
+                className="w-full font-body text-ink bg-white border border-parchment rounded-md p-3 pr-12 resize-none focus:outline-none focus:ring-2 focus:ring-pharmacy"
+                rows={1}
+                placeholder="Ask about an FDA-labeled drug…"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault()
+                    handleSend()
+                  }
+                }}
+              />
+              <button
+                type="submit"
+                disabled={!input.trim()}
+                className="absolute right-2 bottom-2 bg-pharmacy text-paper rounded-full w-8 h-8 flex items-center justify-center disabled:opacity-30 hover:opacity-90 transition-opacity"
+                aria-label="Send"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
