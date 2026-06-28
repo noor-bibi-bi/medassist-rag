@@ -6,7 +6,7 @@
     "expected_behavior": "answer",
     "actual_behavior": "answer",
     "behavior_correct": true,
-    "answer": "The contraindications for metformin are:\n\n1. Severe renal impairment (eGFR below 30 mL/min/1.73 m^2) [Source 1]\n2. Hypersensitivity to metformin [Source 1]\n3. Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma [Source 1]",
+    "answer": "Metformin hydrochloride tablets are contraindicated in patients with:\n\n* Severe renal impairment (eGFR below 30 mL/min/1.73 m^2)\n* Hypersensitivity to metformin\n* Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma\n\n[Source 1]",
     "num_sources": 1,
     "sources": [
       {
@@ -22,9 +22,9 @@
     "category": "answerable",
     "question": "What are the allergy warning signs for ibuprofen?",
     "expected_behavior": "answer",
-    "actual_behavior": "answer",
-    "behavior_correct": true,
-    "answer": "According to [Source 2], ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin.",
+    "actual_behavior": "abstain",
+    "behavior_correct": false,
+    "answer": "According to [Source 2] and [Source 3], ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. \n\nThe warning signs for a severe allergic reaction to ibuprofen are not explicitly stated in the provided context. However, it is generally known that severe allergic reactions can manifest in various ways, including but not limited to:\n\n* Hives\n* Itching\n* Swelling of the face, lips, tongue, or throat\n* Difficulty breathing\n* Abdominal cramps\n* Diarrhea\n* Nausea\n* Vomiting\n\nI don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
     "num_sources": 3,
     "sources": [
       {
@@ -34,7 +34,7 @@
         "text": "Dry eyes and mouth, gingival ulcer, rhinitis Postmarketing Experience The following adverse reactions have been identified during postapproval use of ibuprofen. Because these reactions are reported voluntarily from a population of uncertain size, it is not always possible to reliably estimate their frequency or establish a causal relationship to drug exposure."
       },
       {
-        "drug_name": "Ibuprofen",
+        "drug_name": "betr remedies ibuprofen",
         "section_type": "warnings",
         "distance": 0.7371630072593689,
         "text": "Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin."
@@ -54,7 +54,7 @@
     "expected_behavior": "answer",
     "actual_behavior": "answer",
     "behavior_correct": true,
-    "answer": "The recommended dosage for omeprazole varies by indication. For GERD, the recommended dosage is 20 mg once daily. For pathological hypersecretory conditions, the starting dose is 60 mg once daily, which may be adjusted based on individual patient response. For patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients, the recommended dosage is 10 mg once daily. \n\n[Source 1, 2, 3]",
+    "answer": "The recommended dosage for omeprazole varies depending on the condition being treated. For GERD, the recommended dosage is 20 mg once daily. However, for patients with hepatic impairment (Child-Pugh Class A, B, or C) and Asian patients, the dosage should be reduced to 10 mg once daily.\n\nFor pathological hypersecretory conditions, the starting dose is 60 mg once daily, but this may vary with individual patients. If an ulcer is present, the dosage should be continued for an additional 18 days (or 14 days for some conditions).\n\nHere are the specific dosages for different conditions:\n\n* GERD: 20 mg once daily\n* Pathological hypersecretory conditions: 60 mg once daily (may vary with individual patients)\n* Active duodenal ulcer: 20 mg once daily for 4 weeks\n* Helicobacter pylori eradication: 20 mg once daily for 10 days (as part of triple therapy)\n* Active benign gastric ulcer: 40 mg once daily for 4 to 8 weeks\n\n[Source 1, 2, 3]",
     "num_sources": 3,
     "sources": [
       {
@@ -84,7 +84,7 @@
     "expected_behavior": "answer",
     "actual_behavior": "answer",
     "behavior_correct": true,
-    "answer": "Based on the provided context, the cardiovascular side effects of atorvastatin are not explicitly listed. However, there are mentions of rare reports of:\n\n- Fatal and non-fatal hepatic failure [Source 2]\n- Rhabdomyolysis [Source 2]\n- Tendon rupture [Source 2]\n\nAdditionally, the context mentions that there have been no differences in the overall frequency of adverse reactions or serious adverse reactions between atorvastatin and simvastatin in the IDEAL study [Source 4 and Source 5].",
+    "answer": "Based on the provided context, there are no specific cardiovascular side effects listed for atorvastatin. However, the context does mention that there was no difference in the overall frequency of adverse reactions or serious adverse reactions between the treatment groups in the IDEAL study, which involved 8,888 subjects treated with atorvastatin 80 mg/day or simvastatin 20 mg to 40 mg daily.\n\nHere are some potential cardiovascular-related adverse reactions that are not specifically listed as side effects of atorvastatin, but are mentioned in the context as potential side effects of statin use in general:\n\n* None are listed in the context as being directly associated with atorvastatin, but the context does mention that there have been rare reports of:\n  \u2022 Anaphylaxis\n  \u2022 Angioneurotic edema\n  \u2022 Bullous rashes (including erythema multiforme, Stevens-Johnson syndrome, and toxic epidermal necrolysis)\n  \u2022 Rhabdomyolysis\n  \u2022 Myositis\n  \u2022 Fatigue\n  \u2022 Tendon rupture\n  \u2022 Fatal and non-fatal hepatic failure\n  \u2022 Dizziness\n  \u2022 Depression\n  \u2022 Peripheral neuropathy\n  \u2022 Pancreatitis\n  \u2022 Interstitial lung disease\n  \u2022 Immune-mediated necrotizing myopathy\n  \u2022 Cognitive impairment (e.g., memory loss, forgetfulness, amnesia, memory impairment, confusion)\n\nNote that these are not specifically listed as cardiovascular side effects of atorvastatin, but are mentioned as potential side effects of statin use in general.",
     "num_sources": 5,
     "sources": [
       {
@@ -126,7 +126,7 @@
     "expected_behavior": "answer",
     "actual_behavior": "answer",
     "behavior_correct": true,
-    "answer": "Based on the provided context, the warnings for taking lisinopril include:\n\n- Hypotension (9.7% in the GISSI trial [Source 1])\n- Renal dysfunction (2.0% in the GISSI trial [Source 1], 10% in the High Dose group and 7% in the Low Dose group of the ATLAS trial [Source 2])\n- Angioedema (0.01% in the GISSI trial [Source 1])\n- Skin rash and generalized edema (0.01% in the GISSI trial [Source 1])\n- Post infarction angina (0.3% in the GISSI trial [Source 1])\n- Cough (0.5% in the GISSI trial [Source 1])\n- Discontinuation due to renal dysfunction was 4.2% in elderly patients treated with lisinopril in the GISSI trial [Source 1]\n- Higher incidence of hypotension (by 5.3%) and renal dysfunction (by 1.3%) compared with patients not taking Lisinopril in the ATLAS trial [Source 2]\n- Dizziness (12% in the Low Dose group and 19% in the High Dose group of the ATLAS trial [Source 2])\n- Syncope (5% in the Low Dose group and 7% in the High Dose group of the ATLAS trial [Source 2])\n- Hyperkalemia (4% in the Low Dose group and 6% in the High Dose group of the ATLAS trial [Source 2])\n- Creatinine increased (7% in the Low Dose group and 10% in the High Dose group of the ATLAS trial [Source 2])\n- Acute Myocardial Infarction (patients treated with Lisinopril had a higher incidence compared with patients not taking Lisinopril in the ATLAS trial [Source 2])",
+    "answer": "Based on the provided context, the warnings for taking lisinopril include:\n\n* Hypotension (low blood pressure) - 9.7% in the GISSI trial [Source 1] and 11% in the High Dose ATLAS trial [Source 2]\n* Renal dysfunction (kidney problems) - 2.0% in the GISSI trial [Source 1] and 10% in the High Dose ATLAS trial [Source 2]\n* Angioedema (a rare but serious allergic reaction) - 0.01% in the GISSI trial [Source 1]\n* Cough - 0.5% in the GISSI trial [Source 1]\n* Post infarction angina (chest pain after a heart attack) - 0.3% in the GISSI trial [Source 1]\n* Skin rash and generalized edema (swelling) - 0.01% in the GISSI trial [Source 1]\n* Dizziness - 19% in the High Dose ATLAS trial [Source 2]\n* Syncope (fainting) - 7% in the High Dose ATLAS trial [Source 2]\n* Hyperkalemia (high potassium levels) - 6% in the High Dose ATLAS trial [Source 2]\n* Creatinine increased (kidney function problems) - 10% in the High Dose ATLAS trial [Source 2]\n\nPlease note that these warnings are based on the provided context and may not be a comprehensive list of all possible warnings for taking lisinopril.",
     "num_sources": 2,
     "sources": [
       {
@@ -298,7 +298,7 @@
     "actual_behavior": "abstain",
     "behavior_correct": true,
     "answer": "I don't have enough information in my knowledge base to answer this question confidently. Please consult a healthcare professional.",
-    "num_sources": 3,
+    "num_sources": 2,
     "sources": [
       {
         "drug_name": "METFORMIN HYDROCHLORIDE",
@@ -311,12 +311,6 @@
         "section_type": "dosage_and_administration",
         "distance": 0.7169486284255981,
         "text": "Recommended starting dosage is 100 mg daily, in single or divided doses. ( 2.1 )"
-      },
-      {
-        "drug_name": "Metoprolol Tartrate",
-        "section_type": "dosage_and_administration",
-        "distance": 0.7169486284255981,
-        "text": "Recommended starting dosage is 100 mg daily, in single or divided doses. (2.1)"
       }
     ]
   },
@@ -349,13 +343,13 @@
         "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"
       },
       {
-        "drug_name": "Topcare Infants Ibuprofen",
+        "drug_name": "childrens ibuprofen",
         "section_type": "warnings",
         "distance": 0.7688077688217163,
         "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"
       },
       {
-        "drug_name": "childrens ibuprofen",
+        "drug_name": "Ibuprofen Childrens",
         "section_type": "warnings",
         "distance": 0.7688077688217163,
         "text": "\u2022 has had stomach ulcers or bleeding problems \u2022 takes a blood thinning (anticoagulant) or steroid drug \u2022 takes other drugs containing prescription or nonprescription NSAIDs (aspirin, ibuprofen, naproxen, or others) \u2022 takes more or for a longer time than directed"

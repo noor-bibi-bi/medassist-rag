@@ -18,10 +18,13 @@ def run_evaluation():
     test_questions = load_test_questions()
     results = []
 
+    import time
+
     for item in test_questions:
         print(f"Running {item['id']}: {item['question']}")
 
         output = generate_answer(item["question"])
+        time.sleep(2)
 
         actual_behavior = "abstain" if "don't have enough information" in output["answer"].lower() else "answer"
         result = {
