@@ -236,7 +236,7 @@ function App() {
   }, [messages])
 
   const askBackend = async (questionText) => {
-    const response = await fetch('http://127.0.0.1:8000/ask', {
+    const response = await fetch('https://nooreee-medassist-rag.hf.space/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question: questionText }),
