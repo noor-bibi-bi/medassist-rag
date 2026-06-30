@@ -14,7 +14,7 @@ app = FastAPI(title="MedAssist RAG API")
 # Allow the React dev server (running on a different port) to call this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # default Vite dev server port
+    allow_origins=["*"],  # TEMPORARY - will lock down to deployed frontend URL
     allow_methods=["*"],
     allow_headers=["*"],
 )
