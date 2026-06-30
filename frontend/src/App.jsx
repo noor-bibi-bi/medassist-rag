@@ -146,40 +146,6 @@ function ChatMessage({ message, onEdit }) {
   )
 }
 
-function Sidebar({ conversations, activeConversationId, onSelect, onNewChat }) {
-  return (
-    <div className="w-64 bg-parchment/40 border-r border-parchment flex flex-col h-screen">
-      <div className="p-4">
-        <p className="font-display text-xl font-bold text-pharmacy">MedAssist</p>
-        <button
-          onClick={onNewChat}
-          className="mt-4 w-full font-body text-sm text-pharmacy border border-pharmacy rounded-md py-2 hover:bg-pharmacy hover:text-paper transition-colors"
-        >
-          + New chat
-        </button>
-      </div>
-
-      <div className="flex-1 overflow-y-auto px-2">
-        <p className="font-mono text-xs text-warmgray uppercase tracking-wider px-2 mb-1">
-          Recent
-        </p>
-        {conversations.filter((c) => c.messages.length > 0).slice().reverse().map((conv) => (
-          <button
-            key={conv.id}
-            onClick={() => onSelect(conv.id)}
-            className={`w-full text-left font-body text-sm px-3 py-2 rounded-md mb-1 truncate transition-colors ${
-              conv.id === activeConversationId
-                ? 'bg-pharmacy text-paper'
-                : 'text-ink hover:bg-parchment'
-            }`}
-          >
-            {conv.title || 'New conversation'}
-          </button>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function App() {
   const [input, setInput] = useState('')
@@ -188,6 +154,7 @@ function App() {
     { id: crypto.randomUUID(), title: null, messages: [] },
   ])
   const [activeConversationId, setActiveConversationId] = useState(null)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
     if (activeConversationId === null && conversations.length > 0) {
@@ -322,15 +289,71 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar
-        conversations={conversations}
-        activeConversationId={activeConversationId}
-        onSelect={setActiveConversationId}
-        onNewChat={startNewConversation}
-      />
+    <div className="flex h-screen overflow-hidden relative">
+
+      {/* Sidebar — always visible on desktop, overlay on mobile when open */}
+      <div className={`
+        ${sidebarOpen ? 'flex' : 'hidden'} md:flex
+        flex-col w-64 bg-paper border-r border-parchment h-screen
+        fixed md:relative z-30 md:z-auto
+      `}>
+        <div className="p-4">
+          <div className="flex items-center justify-between">
+            <p className="font-display text-xl font-bold text-pharmacy">MedAssist</p>
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="md:hidden font-mono text-warmgray hover:text-ink text-lg"
+            >
+              ✕
+            </button>
+          </div>
+          <button
+            onClick={() => { startNewConversation(); setSidebarOpen(false); }}
+            className="mt-4 w-full font-body text-sm text-pharmacy border border-pharmacy rounded-md py-2 hover:bg-pharmacy hover:text-paper transition-colors"
+          >
+            + New chat
+          </button>
+        </div>
+        <div className="flex-1 overflow-y-auto px-2">
+          <p className="font-mono text-xs text-warmgray uppercase tracking-wider px-2 mb-1">
+            Recent
+          </p>
+          {conversations.filter((c) => c.messages.length > 0).slice().reverse().map((conv) => (
+            <button
+              key={conv.id}
+              onClick={() => { setActiveConversationId(conv.id); setSidebarOpen(false); }}
+              className={`w-full text-left font-body text-sm px-3 py-2 rounded-md mb-1 truncate transition-colors ${
+                conv.id === activeConversationId
+                  ? 'bg-pharmacy text-paper'
+                  : 'text-ink hover:bg-parchment'
+              }`}
+            >
+              {conv.title || 'New conversation'}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile overlay when sidebar is open */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-ink/50 z-20 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
       <div className="flex-1 flex flex-col bg-paper h-screen overflow-hidden">
+        {/* Mobile header with hamburger */}
+        <div className="md:hidden flex items-center px-4 py-3 border-b border-parchment">
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="font-mono text-warmgray hover:text-ink mr-3"
+            aria-label="Open sidebar"
+          >
+            ☰
+          </button>
+          <p className="font-display font-bold text-pharmacy">MedAssist</p>
+        </div>
         {/* Scrollable message area */}
         <div className="flex-1 overflow-y-auto px-6 py-8">
           <div className="max-w-2xl mx-auto">
