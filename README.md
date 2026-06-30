@@ -1,3 +1,11 @@
+---
+title: MedAssist RAG
+emoji: 💊
+colorFrom: green
+colorTo: green
+sdk: docker
+pinned: false
+---
 # MedAssist — RAG-Powered Clinical Knowledge Assistant
 
 A retrieval-augmented generation (RAG) system that answers natural-language drug questions using real FDA drug label data — with mandatory source citations and a measured, evaluated defense against hallucination.
